@@ -1,4 +1,4 @@
-# My Bookshelf
+# My Bookshelf (https://magical-melba-876c9f.netlify.app)
 
 This repository contains a Bookshelf app built using a MERN stack. Please follow the instructions to set it up.
 
@@ -17,23 +17,28 @@ This repository contains a Bookshelf app built using a MERN stack. Please follow
    
 2. Install all the dependencies using following command:
 
+- UI (app)
 ```Shell
-npm install
+npm install 
+```
+- Server (server)
+```Shell
+npm install 
 ```
 
-2. In the app directory, you can run following command to run the build:
+3. In the app directory, you can run following command to run the build:
+
+```Shell
+npm run build
+```  
+4. Copy the content from app/build to server/dist
+    
+5. In the server directory, run the following command to deploy the application to Netlify:
 
 ```Shell
 npm run build
 ```
 
-3. In the server directory, run the following command to start the application:
+- This will runs the app in the production mode.
+- Open the deploy URL shared after successfull deployment to view the app in your browser.
 
-```Shell
-npm start
-```
-
-- This will runs the app in the development mode.
-- Open [http://localhost:3010](http://localhost:3000) to view it in your browser.
-- The page will reload after 2000ms when you make changes.
-# MyBookshelf
