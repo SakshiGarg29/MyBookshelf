@@ -27,7 +27,10 @@ const LoginPage = ({ onExit, onError }) => {
     dispatch({ type: "set-login-password", password });
   const doLogin = () => {
     fetch(
-      "/api/login?userid=" + state.username + "&password=" + state.password,
+      "/.netlify/functions/api/login?userid=" +
+        state.username +
+        "&password=" +
+        state.password,
       {
         mode: "cors",
         method: "POST",

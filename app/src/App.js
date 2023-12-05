@@ -71,7 +71,10 @@ const App = () => {
   useEffect(() => {
     console.log(state.user);
     if (state.user && state.user.username)
-      fetch("/api/shelf/find?userid=" + state.user.username, { mode: "cors" })
+      fetch(
+        "/.netlify/functions/api/shelf/find?userid=" + state.user.username,
+        { mode: "cors" }
+      )
         .then((res) => res.json())
         .then((data) => dispatch({ type: "shelfed-books", data }));
   }, [state.user]);
@@ -157,7 +160,8 @@ const App = () => {
                         setTimeout(
                           () =>
                             fetch(
-                              "/api/shelf/find?userid=" + state.user.username,
+                              "/.netlify/functions/api/shelf/find?userid=" +
+                                state.user.username,
                               { mode: "cors" }
                             )
                               .then((res) => res.json())
@@ -181,9 +185,13 @@ const App = () => {
           searchText={state.searchKeyword}
           userdata={state.user}
           onBack={() => {
-            fetch("/api/shelf/find?userid=" + state.user.username, {
-              mode: "cors",
-            })
+            fetch(
+              "/.netlify/functions/api/shelf/find?userid=" +
+                state.user.username,
+              {
+                mode: "cors",
+              }
+            )
               .then((res) => res.json())
               .then((data) => dispatch({ type: "shelfed-books", data }))
               .then(() => dispatch({ type: "exit-search" }));

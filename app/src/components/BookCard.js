@@ -6,16 +6,28 @@ const BookCard = ({ data, isFav, user, onRemoveRefresh }) => {
   const { title, description, imageLinks, authors } = volumeInfo;
 
   const onAdd = (book) => {
-    fetch("/api/my-books?userid=" + user.username + "&bookurl=" + book, {
-      mode: "cors",
-      method: "POST",
-    }).then((res) => console.log(res));
+    fetch(
+      "/.netlify/functions/api/my-books?userid=" +
+        user.username +
+        "&bookurl=" +
+        book,
+      {
+        mode: "cors",
+        method: "POST",
+      }
+    ).then((res) => console.log(res));
   };
   const onRemove = (book) => {
-    fetch("/api/my-books/delete?userid=" + user.username + "&bookurl=" + book, {
-      mode: "cors",
-      method: "POST",
-    })
+    fetch(
+      "/.netlify/functions/api/my-books/delete?userid=" +
+        user.username +
+        "&bookurl=" +
+        book,
+      {
+        mode: "cors",
+        method: "POST",
+      }
+    )
       .then((res) => console.log(res))
       .then(onRemoveRefresh());
   };

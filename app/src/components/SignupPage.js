@@ -31,7 +31,7 @@ const SignupPage = ({ onExit, onError }) => {
   const setNameValue = (name) => dispatch({ type: "set-login-name", name });
   const doSigup = () => {
     fetch(
-      "/api/signup?userid=" +
+      "/.netlify/functions/api/signup?userid=" +
         state.username +
         "&password=" +
         state.password +

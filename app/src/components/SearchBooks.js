@@ -18,7 +18,7 @@ const reducer = (state, action) => {
 const SearchBooks = ({ searchText, userdata, onBack }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   useEffect(() => {
-    fetch(`/api/search-books?search=${searchText}`, {
+    fetch(`/.netlify/functions/api/search-books?search=${searchText}`, {
       mode: "cors",
     })
       .then((res) => res.json())
