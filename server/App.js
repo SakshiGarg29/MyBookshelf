@@ -6,7 +6,7 @@ const getEntry = require("./GetEntryMDB");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const port = 3010;
+const port = 443;
 
 app.use(express.static("public"));
 
