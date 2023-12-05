@@ -6,9 +6,10 @@ const getEntry = require("./GetEntryMDB");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const port = 443;
+const serverless = require("serverless-http");
+const router = express.Router();
 
-app.use(express.static("public"));
+app.use(express.static("dist"));
 
 app.get("/api/search-books", (req, res) => {
   res.set("Access-Control-Allow-Origin", "*");
@@ -164,6 +165,5 @@ app.get("/api/shelf/find", async (req, res) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+app.use("/.netlify/functions", router);
+module.exports.handler = serverless(app);
