@@ -1,0 +1,13 @@
+{
+  "name": "backend-server",
+  "version": "1.0.0",
+  "description": "MongoDB Node.js backend server",
+  "dependencies": {
+    "mongodb": "6.3.0",
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "start": "node App.js"
+  }
+  
+}
